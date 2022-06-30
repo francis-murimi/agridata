@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'joblib',
     'numpy',
     'pandas',
-    'beautifulsoup4',
+    'bs4',
     'nltk',
     
 ]

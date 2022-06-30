@@ -1,15 +1,14 @@
 from joblib import load
-
-from prepare_input import df
+#from naiveb.prepare_input import prepare
 from vocab import vect
+from prepare_input import prepare
 
 
 my_nb = load('naiveb/newnbmodel.joblib')
-
+df = prepare('https://www.britannica.com/topic/agriculture/Early-development')
 A = df.text
 
 A_pred_vect = vect.transform(A)
-
 
 my_pred = my_nb.predict(A_pred_vect)
 
@@ -20,4 +19,4 @@ if my_pred[0] == 1:
 else:
     print('Not agriculture')
 
-print(A)
+print(A) 

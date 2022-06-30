@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(('textdata.urls','textdata'),namespace='textdata')),
+    path('',include(('naiveb.urls','naiveb'),namespace='naiveb')),
 ]
