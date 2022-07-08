@@ -4,17 +4,9 @@ from django.http import HttpResponse, Http404,HttpResponseRedirect
 import json
 
 def home(request):
-    blogs = Blog.objects.all()
-    total = blogs.count()
-    
-    uploads = Upload.objects.all()
-    utotal = uploads.count()
-    
-    read_uploads = Upload.objects.filter(status= True)
-    read_total = read_uploads.count()
-    
-    
-    return HttpResponse(json.dumps({'total':total, 'uploaded_total':utotal, 'read_total':read_total}), content_type="application/json")
+    template = loader.get_template('textdata/home.html')
+    context = {}
+    return HttpResponse(template.render(context,request))
 
 def read_file(request):
     files = Upload.objects.filter(status = False)

@@ -96,7 +96,7 @@ def classify(request,id):
         pred = 'Agriculture'
     else:
         pred = 'Not agriculture'
-    
+
     post.prediction = my_pred
     post.save()
     context = {'pred': pred,
