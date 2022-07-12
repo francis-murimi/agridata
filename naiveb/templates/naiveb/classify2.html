@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Caps</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        *{
+        box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            padding: 2rem;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body h1{
+            font-weight: 600;
+        }
+        body hr{
+            width:50px;
+            border: none;
+            border-bottom: 1px solid rgba(119, 119, 119, 0.25)
+        }
+        .container{
+            width: 60%;
+            margin: 1rem auto;
+            padding: 2rem;
+            text-align: justify;
+            transition: all 0.3s;
+        }
+        .container p{
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+            word-spacing: 2px;
+        }
+
+        .container p:first-child::first-letter{
+            color:#FE5F55;
+            font-weight: bold;
+            font-size: 70px;
+            float: left;
+            line-height: 60px;
+            padding-right: 8px;
+            margin-top: -3px;
+        }
+
+        @media screen and (max-width:600px){
+            .container{
+                width: 100%;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="{% url 'textdata:home' %}"><button type="button" class="btn btn-success" style="margin: 1%;">Go Home page</button></a>
+    </div>
+    <h1>Step One</h1>
+    <hr>
+    <div class="container">
+        <p>
+            You will provide a link in this step. Enter a link to the source of the text on the form provided below.
+        </p>
+        <hr>
+        <p>
+            A link format example: <span style="color: rgb(241, 113, 145);">https://www.britannica.com/story/whats-the-difference-between-a-gene-and-an-allele</span> 
+        </p>
+        <hr>
+        <p>
+            After entering the link, click on the submit and we will tell you if the text from the link contains any agricultural information.
+        </p>
+    </div>
+    <div>
+        <div style="">
+            <form action="." method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit" class="btn-info">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

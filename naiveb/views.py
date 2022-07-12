@@ -29,7 +29,7 @@ def get_link(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = UrlForm()
-    template = loader.get_template('naiveb/classify.html')
+    template = loader.get_template('naiveb/classify2.html')
     context = {'form':form,}
     return HttpResponse(template.render(context,request))
 

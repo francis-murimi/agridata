@@ -12,14 +12,14 @@
         Source link : <a href="{{ post.url }}" target="_blank">Read Post</a> <br> <hr>
         Classification: 
         {% if post.prediction == False %}
-            Not Agriculture
+            <span style="color: rgb(120, 120, 228);">Not Agriculture</span>
         {% else %}
-            Agriculture
+            <span style="color: rgb(117, 199, 117);">Agriculture</span>
         {% endif %}
         <br>
         <hr>
         <div>
-            <a href="{% url 'naiveb:get_link' %}"><button type="button" class="btn btn-success" style="margin: 10%;">Another link</button></a>
+            <a href="{% url 'naiveb:get_link' %}"><button type="button" class="btn btn-success" style="margin: 5%;">Process Another link</button></a>
         </div>
         Content: {{post.text|linebreaks}}<br>
     </div>

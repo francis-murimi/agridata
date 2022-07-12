@@ -4,7 +4,7 @@ from django.http import HttpResponse, Http404,HttpResponseRedirect
 import json
 
 def home(request):
-    template = loader.get_template('textdata/home.html')
+    template = loader.get_template('textdata/home2.html')
     context = {}
     return HttpResponse(template.render(context,request))
 
